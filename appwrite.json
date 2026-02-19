@@ -1,0 +1,4420 @@
+{
+  "projectId": "6951b03c000ea599cc43",
+  "databases": [
+    {
+      "$id": "imagine-project-db",
+      "name": "Imagine Project DB",
+      "enabled": true
+    }
+  ],
+  "collections": [
+    {
+      "$id": "bakery_status",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "databaseId": "imagine-project-db",
+      "name": "bakery_status",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isOpen",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "openingTime",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "closingTime",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "announcement",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "logoFileId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "notificationsEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "phoneNumber",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ctaType",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ctaExternalUrl",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ctaButtonText",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "loyaltyEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "loyaltyThreshold",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": -9223372036854776000,
+          "max": 9223372036854776000,
+          "default": 10
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "breads",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "databaseId": "imagine-project-db",
+      "name": "breads",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "name",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "description",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "quantityLeft",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "price",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "estimatedReadyTime",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "isAvailable",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "imageFileId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "nextBatchTime",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "isHidden",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "soldOutAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "shopId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_breadType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadType"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "bread_reminders",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "databaseId": "imagine-project-db",
+      "name": "bread_reminders",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "notified",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "deviceToken",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_breadId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_userId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["userId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_notified",
+          "type": "key",
+          "status": "available",
+          "attributes": ["notified"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "push_subscriptions",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "databaseId": "imagine-project-db",
+      "name": "push_subscriptions",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "endpoint",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 2000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "p256dh",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "auth",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_userId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["userId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "orders",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "orders",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "orderType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "totalAmount",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "notes",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "pickupTime",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "deliveryAddress",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "deliveryCity",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isDelivery",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "reviewRequested",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "loyaltyPointsEarned",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": -9223372036854776000,
+          "max": 9223372036854776000,
+          "default": 0
+        },
+        {
+          "key": "reviewSubmitted",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "deliveryFee",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": -1.7976931348623157e308,
+          "max": 1.7976931348623157e308,
+          "default": null
+        },
+        {
+          "key": "rewardApproved",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "rewardApprovedBy",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "rewardAmount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": -9223372036854776000,
+          "max": 9223372036854776000,
+          "default": 0
+        },
+        {
+          "key": "rewardApprovedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "readyForPickup",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "readyAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "pickupDeadline",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "pickupDeadlineMinutes",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": -9223372036854776000,
+          "max": 9223372036854776000,
+          "default": 60
+        },
+        {
+          "key": "dailyOrderNumber",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": -9223372036854776000,
+          "max": 9223372036854776000,
+          "default": 1
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_orderType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["orderType"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_customerPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["customerPhone"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "order_items",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "order_items",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "orderId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "quantity",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "unitPrice",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "subtotal",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_orderId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["orderId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_breadId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "cart_items",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "cart_items",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "quantity",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "unitPrice",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_userId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["userId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_breadId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "table_reservations",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "table_reservations",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "reservationDate",
+          "type": "datetime",
+          "required": true,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "reservationTime",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 20,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "partySize",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "tableNumber",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "notes",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "contactMethod",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_reservationDate",
+          "type": "key",
+          "status": "available",
+          "attributes": ["reservationDate"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "customers",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "customers",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "name",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "phone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "address",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "loyaltyPoints",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalOrders",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "freeBreadsEarned",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "freeBreadsRedeemed",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "lastVisit",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "rewardPending",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "totalSpent",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": -1.7976931348623157e308,
+          "max": 1.7976931348623157e308,
+          "default": 0
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": "active",
+          "encrypt": false
+        },
+        {
+          "key": "bannedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "bannedReason",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 20000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "vipSince",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_phone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["phone"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "customer_reviews",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "customer_reviews",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "orderId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "rating",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "comment",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_customerId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["customerId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_orderId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["orderId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "ingredient_costs",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "ingredient_costs",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "name",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "unit",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "bulkPrice",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "bulkQuantity",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "costPerUnit",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "category",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_name",
+          "type": "key",
+          "status": "available",
+          "attributes": ["name"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "bread_recipes",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "bread_recipes",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ingredientId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "quantityUsed",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "ingredientCost",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_breadId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_ingredientId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["ingredientId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "daily_production",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "daily_production",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "date",
+          "type": "datetime",
+          "required": true,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "breadId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "breadName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "produced",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "sold",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "unsold",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "wasteRatio",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "revenue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "cogs",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "netProfit",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "smartGoalNextDay",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_date",
+          "type": "key",
+          "status": "available",
+          "attributes": ["date"],
+          "orders": ["DESC"]
+        },
+        {
+          "key": "idx_breadId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["breadId"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "business_costs",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "business_costs",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "name",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "type",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "amount",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "frequency",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "dailyAmount",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_type",
+          "type": "key",
+          "status": "available",
+          "attributes": ["type"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "insights",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "insights",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "type",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "message",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "actionLabel",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "actionValue",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "priority",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "isActive",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "generatedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "expiresAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "relatedBreadId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "metricValue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "recommendedChange",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_type",
+          "type": "key",
+          "status": "available",
+          "attributes": ["type"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isActive",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isActive"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_priority",
+          "type": "key",
+          "status": "available",
+          "attributes": ["priority"],
+          "orders": ["DESC"]
+        }
+      ]
+    },
+    {
+      "$id": "wallets",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "wallets",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "phoneNumber",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "balance",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "totalEarned",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalSpent",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalTransferredOut",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalTransferredIn",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "isLocked",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "lockedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_phoneNumber",
+          "type": "unique",
+          "status": "available",
+          "attributes": ["phoneNumber"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isLocked",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isLocked"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "wallet_transactions",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "wallet_transactions",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "walletId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "type",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "amount",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "balanceBefore",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "balanceAfter",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "orderId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "transferToPhone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "transferFromPhone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "approvedBy",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "note",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isExpired",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "expiresAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_walletId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["walletId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_type",
+          "type": "key",
+          "status": "available",
+          "attributes": ["type"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_orderId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["orderId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_expiresAt",
+          "type": "key",
+          "status": "available",
+          "attributes": ["expiresAt"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isExpired",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isExpired"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "pending_transfers",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "pending_transfers",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "senderPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "senderName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "recipientPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "amount",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "claimedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "claimedByWalletId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "expiresAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "note",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_recipientPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["recipientPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_senderPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["senderPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "rewards_config",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "rewards_config",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "rewardPerOrder",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "minimumSpendForReward",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "isActive",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "reward_gifts",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "reward_gifts",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "recipientPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "recipientName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "amount",
+          "type": "integer",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "giftedBy",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "note",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_recipientPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["recipientPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "community_posts",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "community_posts",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "authorPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "authorName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "postType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "content",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 5000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "imageFileId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "relatedBreadId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "rating",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "likesCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "commentsCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "isApproved",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "isHidden",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "isPinned",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "isVipOnly",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_postType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["postType"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_authorPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["authorPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isApproved",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isApproved"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isHidden",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isHidden"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "community_comments",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "community_comments",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "postId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "authorPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "authorName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "content",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 2000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isStaffReply",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "isHidden",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "likesCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_postId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["postId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_authorPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["authorPhone"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "community_likes",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "community_likes",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "targetId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "targetType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_targetId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["targetId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_userPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["userPhone"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "community_settings",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "community_settings",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "allowRecipes",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "allowReviews",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "allowQuestions",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "requireApproval",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "vipOnlyPosting",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "welcomeMessage",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "super_admin_sessions",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "super_admin_sessions",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "sessionToken",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "expiresAt",
+          "type": "datetime",
+          "required": true,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "ipAddress",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userAgent",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isActive",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_sessionToken",
+          "type": "key",
+          "status": "available",
+          "attributes": ["sessionToken"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isActive",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isActive"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "admin_shops",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "admin_shops",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerEmail",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerPhone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "country",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": "active",
+          "encrypt": false
+        },
+        {
+          "key": "planType",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": "free",
+          "encrypt": false
+        },
+        {
+          "key": "totalProducts",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalOrders",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalCustomers",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalRevenue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "lastActiveAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "registeredAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopType"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_planType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["planType"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "shop_features",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "shop_features",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "featureName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "featureCategory",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "isPaid",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "price",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "billingCycle",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "enabledAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "expiresAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "usageCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_featureName",
+          "type": "key",
+          "status": "available",
+          "attributes": ["featureName"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_isPaid",
+          "type": "key",
+          "status": "available",
+          "attributes": ["isPaid"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "feature_purchases",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "feature_purchases",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "featureName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "amount",
+          "type": "double",
+          "required": true,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "currency",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": "TND",
+          "encrypt": false
+        },
+        {
+          "key": "paymentMethod",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "paymentStatus",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": "pending",
+          "encrypt": false
+        },
+        {
+          "key": "transactionId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "billingPeriodStart",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "billingPeriodEnd",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "invoiceUrl",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_paymentStatus",
+          "type": "key",
+          "status": "available",
+          "attributes": ["paymentStatus"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "shop_activity_logs",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "shop_activity_logs",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "activityType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "description",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "metadata",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 2000,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_activityType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["activityType"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "shops",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "shops",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "name",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "slug",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "description",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopType",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "logoFileId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "coverFileId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerEmail",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "ownerPhone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "country",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "city",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 100,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "address",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "phoneNumber",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "currency",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "timezone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "isOpen",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "openingTime",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "closingTime",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 10,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "announcement",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "planType",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "planExpiresAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "loyaltyEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "loyaltyThreshold",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 10
+        },
+        {
+          "key": "totalProducts",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalOrders",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalCustomers",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalRevenue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "reservationsEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "ordersEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": true
+        },
+        {
+          "key": "communityEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        },
+        {
+          "key": "walletEnabled",
+          "type": "boolean",
+          "required": false,
+          "array": false,
+          "default": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_slug",
+          "type": "unique",
+          "status": "available",
+          "attributes": ["slug"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_ownerId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["ownerId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopType",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopType"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "shop_members",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "shop_members",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "shopId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userId",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "role",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userEmail",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "userPhone",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "invitedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "joinedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_shopId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["shopId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_userId",
+          "type": "key",
+          "status": "available",
+          "attributes": ["userId"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_role",
+          "type": "key",
+          "status": "available",
+          "attributes": ["role"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "support_tickets",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "support_tickets",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "subject",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "message",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 2000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "priority",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 50,
+          "default": "normal",
+          "encrypt": false
+        },
+        {
+          "key": "staffReply",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 2000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "repliedBy",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "repliedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "resolvedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_customerPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["customerPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "phone_verifications",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "phone_verifications",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerPhone",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "customerName",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "verifiedBy",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "verifiedAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "rejectedReason",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 500,
+          "default": null,
+          "encrypt": false
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_customerPhone",
+          "type": "key",
+          "status": "available",
+          "attributes": ["customerPhone"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        }
+      ]
+    },
+    {
+      "$id": "push_notifications",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "push_notifications",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "message",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 1000,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "targetAudience",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "sentCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "deliveredCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "clickedCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 50,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "scheduledFor",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "sentAt",
+          "type": "datetime",
+          "required": false,
+          "array": false,
+          "format": "",
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_status",
+          "type": "key",
+          "status": "available",
+          "attributes": ["status"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_sentAt",
+          "type": "key",
+          "status": "available",
+          "attributes": ["sentAt"],
+          "orders": ["DESC"]
+        }
+      ]
+    },
+    {
+      "$id": "analytics_snapshots",
+      "$permissions": [],
+      "databaseId": "imagine-project-db",
+      "name": "analytics_snapshots",
+      "enabled": true,
+      "documentSecurity": true,
+      "attributes": [
+        {
+          "key": "createdBy",
+          "type": "string",
+          "required": true,
+          "array": false,
+          "size": 64,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "snapshotDate",
+          "type": "datetime",
+          "required": true,
+          "array": false,
+          "format": "",
+          "default": null
+        },
+        {
+          "key": "totalRevenue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "totalOrders",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "totalCustomers",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "averageOrderValue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "topSellingBreadId",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "topSellingBreadName",
+          "type": "string",
+          "required": false,
+          "array": false,
+          "size": 255,
+          "default": null,
+          "encrypt": false
+        },
+        {
+          "key": "topSellingBreadCount",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "peakHourStart",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "peakHourEnd",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "peakHourOrders",
+          "type": "integer",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": 0
+        },
+        {
+          "key": "wastePercentage",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        },
+        {
+          "key": "totalWasteValue",
+          "type": "double",
+          "required": false,
+          "array": false,
+          "min": null,
+          "max": null,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "key": "idx_createdBy",
+          "type": "key",
+          "status": "available",
+          "attributes": ["createdBy"],
+          "orders": ["ASC"]
+        },
+        {
+          "key": "idx_snapshotDate",
+          "type": "key",
+          "status": "available",
+          "attributes": ["snapshotDate"],
+          "orders": ["DESC"]
+        }
+      ]
+    }
+  ],
+  "buckets": [
+    {
+      "$id": "imagine-project-bucket",
+      "$permissions": [
+        "create(\"any\")",
+        "read(\"any\")",
+        "update(\"any\")",
+        "delete(\"any\")"
+      ],
+      "fileSecurity": true,
+      "name": "imagine-project-bucket",
+      "enabled": true,
+      "maximumFileSize": 50000000,
+      "allowedFileExtensions": [],
+      "compression": "none",
+      "encryption": true,
+      "antivirus": true
+    }
+  ]
+}
